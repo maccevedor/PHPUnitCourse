@@ -33,7 +33,6 @@ class QueueTest extends TestCase
         // $queue = new Queue;
 
         $this->assertEquals(0, static::$queue->getCount());
-
     }
 
     public function testAnItemIsAddedToTheQueue()
@@ -42,7 +41,6 @@ class QueueTest extends TestCase
         static::$queue->push('green');
 
         $this->assertEquals(1, static::$queue->getCount());
-
     }
 
     public function testAnItemIsRemovedFromTheQueue()
@@ -63,15 +61,14 @@ class QueueTest extends TestCase
         static::$queue->push('second');
 
         $this->assertEquals('first', static::$queue->pop());
-
     }
 
-    public function testMaxNumberOfItemsCanBeAdd(){
+    public function testMaxNumberOfItemsCanBeAdded()
+    {
 
         for ($i = 0; $i < Queue::MAX_ITEMS; $i++) {
 
             $this->queue->push($i);
-
         }
 
         $this->assertEquals(Queue::MAX_ITEMS, $this->queue->getCount());

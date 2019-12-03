@@ -2,5 +2,4 @@
 
 class QueueException extends Exception
 {
-
 }

@@ -1,5 +1,3 @@
 <?php
 
-class QueueException extends Exception
-{
-}
+class QueueException extends Exception { }

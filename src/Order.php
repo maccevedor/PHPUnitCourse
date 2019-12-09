@@ -7,36 +7,49 @@
  */
 class Order
 {
-
     /**
-     * Amount
+     * Quantity
      * @var int
      */
-    public $amount = 0;
+    public $quantity;
 
     /**
-     * Payment gateway dependency
-     * @var PaymentGateway
+     * Unit price
+     * @var float
      */
-    protected $gateway;
+    public $unit_price;
+
+    /**
+     * Total amount
+     * @var float
+     */
+    public $amount;
 
     /**
      * Constructor
      *
+     * @param int $quantity Quantity
+     * @param float $unit_price Unit price
+     *
      * @return void
      */
-    public function __construct(PaymentGateway $gateway)
+    public function __construct(int $quantity, float $unit_price)
     {
-        $this->gateway = $gateway;
+        $this->quantity = $quantity;
+        $this->unit_price = $unit_price;
+
+        $this->amount = $quantity * $unit_price;
     }
 
     /**
-     * Process the order
+     * Charge the total amount
      *
-     * @return boolean
+     * @param PaymentGateway $gateway Payment gateway object
+     *
+     * @return void
      */
-    public function process()
+    public function process(PaymentGateway $gateway)
     {
-        return $this->gateway->charge($this->amount);
+        $gateway->charge($this->amount);
     }
 }

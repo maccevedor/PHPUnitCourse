@@ -1,9 +1,9 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Mockery\Adapter\PhpUnit\MockeryTestCase;
+// use Mockery\Adapter\PhpUnit\MockeryTestCase;
 
-class ExampleTest extends MockeryTestCase
+class ExampleTest
 {
     public function testAddingTwoPlusTwoResultsInFour()
     {

@@ -8,7 +8,13 @@ class Article
 
     public function getSlug(){
 
-        return "";
+        //return "";
+
+        $slug = $this->title;
+
+        $slug = str_replace(' ','_', $slug);
+
+        return $slug;
 
     }
 }

@@ -9,5 +9,5 @@ class ItemChild extends Item
 
   public function getToken(){
     return parent::getToken();
-  }
+   }
 }

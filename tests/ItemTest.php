@@ -7,14 +7,14 @@ class ItemTest extends TestCase
     public function testDescriptionIsNotEmpty()
     {
         $item = new Item;
-        
-        $this->assertNotEmpty($item->getDescription());                    
+
+        $this->assertNotEmpty($item->getDescription());
     }
-    
+
     public function testIDisAnInteger()
     {
-        $item = new Item;
-        
+        $item = new ItemChild;
+
         $this->assertIsInt($item->getID());
-    }    
+    }
 }

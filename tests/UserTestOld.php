@@ -64,6 +64,8 @@ class UserTest extends TestCase
 
         $user = new User('dave@example.com');
 
+        $user->setMailerCallable([Mailer::class,'send']);
+
         $this->assertTrue($user->notify('Hello!'));
 
     }

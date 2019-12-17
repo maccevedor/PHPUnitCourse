@@ -15,10 +15,10 @@ class User
     public $email;
 
     /**
-     * Mailer object
-     * @var Mailer
+     * Mailer callable
+     * @var callable
      */
-    protected $mailer;
+    protected $mailer_callable;
     
     /**
      * Constructor
@@ -33,14 +33,14 @@ class User
     }
 
     /**
-     * Mailer setter
+     * Mailer callable setter
      *
-     * @param Mailer $mailer A Mailer object
+     * @param callable $mailer_callable A Mailer callable
      *
      * @return void
      */
-    public function setMailer(Mailer $mailer) {
-        $this->mailer = $mailer;        
+    public function setMailerCallable(callable $mailer_callable) {
+        $this->mailer_callable = $mailer_callable;        
     }
     
     /**
@@ -52,7 +52,7 @@ class User
      */
     public function notify(string $message)
     {
-        return $this->mailer->send($this->email, $message);
+        return call_user_func($this->mailer_callable, $this->email, $message);
     }
 }
 

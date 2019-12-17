@@ -18,7 +18,7 @@ class Mailer
      *
      * @return boolean
      */
-    public function send(string $email, string $message)
+    public  function send(string $email, string $message)
     {
         if (empty($email)) {
             throw new InvalidArgumentException;
@@ -29,7 +29,7 @@ class Mailer
         return true;
     }
 
-        /**
+    /**
      * Send a message
      *
      * @param string $email The email address

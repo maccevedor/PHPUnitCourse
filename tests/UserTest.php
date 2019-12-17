@@ -8,11 +8,14 @@ class UserTest extends TestCase
     {
         $user = new User('dave@example.com');
 
-        //$mailer = new Mailer;
         $mailer = $this->createMock(Mailer::class);
-
+        
+        $mailer->expects($this->once())
+               ->method('send')
+               ->willReturn(true);
+        
         $user->setMailer($mailer);
-
+        
         $this->assertTrue($user->notify('Hello!'));
     }
 }

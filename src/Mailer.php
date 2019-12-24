@@ -3,28 +3,30 @@
 /**
  * Mailer
  *
- * Send messages
+ * An example mailer class
  */
 class Mailer
 {
+
     /**
      * Send a message
      *
-     * @param string $email The email address
-     * @param string $message The message
+     * @param string $email  Recipient email address
+     * @param string $message  Content of the message
      *
-     * @return boolean True if sent, false otherwise
+     * @throws InvalidArgumentException If $email is empty
+     *
+     * @return boolean
      */
-    public function sendMessage($email, $message)
+    public static function send(string $email, string $message)
     {
         if (empty($email)) {
-            throw new Exception;
+            throw new InvalidArgumentException;
         }
-        // Use mail() or PHPMailer for example
-        sleep(3);
 
-        echo "send '$message' to '$email'";
+        echo "Send '$message' to $email";
 
         return true;
     }
+
 }

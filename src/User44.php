@@ -15,6 +15,12 @@ class User
     public $email;
 
     /**
+     * Mailer object
+     * @var Mailer
+     */
+    protected $mailer;
+
+    /**
      * Constructor
      *
      * @param string $email The user's email
@@ -27,6 +33,17 @@ class User
     }
 
     /**
+     * Mailer setter
+     *
+     * @param Mailer $mailer A Mailer object
+     *
+     * @return void
+     */
+    public function setMailer(Mailer $mailer) {
+        $this->mailer = $mailer;
+    }
+
+    /**
      * Send the user a message
      *
      * @param string $message The message
@@ -35,10 +52,8 @@ class User
      */
     public function notify(string $message)
     {
-        return Mailer::send($this->email, $message);
+        //$mailer = new Mailer;
+        //return $mailer::send($this->email, $message);
+        return $this->mailer->send($this->email, $message);
     }
 }
-
-
-
-

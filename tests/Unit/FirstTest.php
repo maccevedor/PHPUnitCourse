@@ -1,6 +1,9 @@
 <?php
 
+namespace Test\Unit;
+
 use PHPUnit\Framework\TestCase;
+use Calculator;
 
 class FirstTest extends  TestCase
 {

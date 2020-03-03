@@ -2,16 +2,17 @@
 
 namespace App\ShoppingCart;
 
-
-class Cart() 
+class Cart
 {
-	private $cart = [];
+	//private $cart = [];
+	private $cart;
 	public $id;
 
-	public function __contruct()
+	public function __construct()
 	{
 		$this->id = uniqid();
-		$this->cart = $cart;
+		$this->cart = [];
+		//$this->cart = $cart;
 	}
 
 	public function add(CartItem $item): void 
@@ -20,7 +21,7 @@ class Cart()
 		
 		
 	}
-	public function addItems(array $item): void 
+	public function addItems(array $items): void 
 	{ 
 		$this->cart = array_merge($this->cart,$items);
 		
@@ -40,4 +41,13 @@ class Cart()
 	{
 		return empty($this->cart);
 	}
+
+    public function remove($id): void
+    {
+        foreach($this->cart as $key => $item)
+        {
+            if($item->id == $id)
+                unset($this->cart[$key]);
+        }
+    }
 }

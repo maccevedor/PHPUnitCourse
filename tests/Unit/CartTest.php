@@ -10,7 +10,8 @@ class CartTest extends TestCase
 {
     public function testItCreatesACart()
     {
-        $item = new CartItem("Mouse", 20);
+        //$item = new CartItem("Mouse", 20);
+        $item = CreateItem("Mouse", 20);
         $cart = new Cart();
         
         $this->assertEquals(0, $cart->count());

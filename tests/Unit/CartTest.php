@@ -12,6 +12,18 @@ use App\ShoppingCart\CartIsEmptyException;
 class CartTest extends TestCase
 {
    
+
+    public static function setUpBeforeClass()
+    {
+        echo "Inicio \n";
+    }
+
+    public static function tearDownAfterClass()
+    {
+        echo "Fin \n";
+    }
+
+
     /**
      * This method is called before each test.
      */

@@ -7,6 +7,18 @@ use Calculator;
 
 class FirstTest extends  TestCase
 {
+
+    protected function setUp()
+    {
+        
+        if(true) {
+            $this->markTestSkipped(
+                'this'
+            );
+
+            $this->assertTrue(true);
+        }
+    }
     public function testSum(){
         $c = new Calculator();
 
@@ -17,5 +29,13 @@ class FirstTest extends  TestCase
 
         $this->assertClassHasAttribute('data', Calculator::class);
         $this->assertContains(1, [2, 3, 1]);
+    }
+    public function testToComplete(){
+        
+        $this->markTestIncomplete();
+
+    }
+
+    public function testSkipped(){
     }
 }

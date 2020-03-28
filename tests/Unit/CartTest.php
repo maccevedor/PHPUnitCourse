@@ -9,7 +9,9 @@ use App\ShoppingCart\CartItem;
 use App\ShoppingCart\CartIsEmptyException;
 //use App\Connection;
 
-class CartTest extends TestCase
+use Test\TestBase;
+
+class CartTest extends TestBase
 {
    
 
@@ -30,13 +32,16 @@ class CartTest extends TestCase
     protected function setUp()/* The :void return type declaration that should be here would cause a BC issue */
     {
         //echo "SetUp\n";
+        Parent::setUp();
         $this->cart = new Cart();
         $this->conn = new Connection();
         $this->conn->createSchema();
     }
 
+
     public function testItCreatesACart()
     {
+        $this->assertEquals('Fernando',$this->name);
         //$item = new CartItem("Mouse", 20);
         $item = CreateItem("Mouse", 20);
         //$cart = new Cart();
@@ -46,7 +51,6 @@ class CartTest extends TestCase
         $this->assertEquals(1,$this->cart->count());
 
     }
-
     public function testItAddsMultiplesItems()
     {
         $items = [];

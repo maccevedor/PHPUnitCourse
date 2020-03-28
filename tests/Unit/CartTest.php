@@ -75,7 +75,7 @@ class CartTest extends TestCase
     {
         //unset();
         //echo "tearDown\n";
-        $this->conn->dropTable();
+        //$this->conn->dropTable();
     }
 
 

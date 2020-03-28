@@ -38,7 +38,9 @@ class CartTest extends TestBase
         $this->conn->createSchema();
     }
 
-
+    /**
+     * @testdox Create Cart PHPUnit
+     */
     public function testItCreatesACart()
     {
         $this->assertEquals('Fernando',$this->name);

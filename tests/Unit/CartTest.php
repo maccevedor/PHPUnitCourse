@@ -6,6 +6,7 @@ use App\Connection;
 use PHPUnit\Framework\TestCase;
 use App\ShoppingCart\Cart;
 use App\ShoppingCart\CartItem;
+use App\ShoppingCart\CartIsEmptyException;
 //use App\Connection;
 
 class CartTest extends TestCase
@@ -84,6 +85,13 @@ class CartTest extends TestCase
         $this->conn->insert($this->cart);
         $cart = $this->conn->get($this->cart->id);
         $this->assertEquals($cart->id, $this->cart->id);
+    }
+
+
+    public function test_id_throws_an_empty_exception(){
+        
+        $this->expectException(CartIsEmptyException::class);
+        $this->cart->getFirstItem();
     }
 
 }

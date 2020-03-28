@@ -27,9 +27,15 @@ class Cart
 		
 	}	
 
-	public function getFirtsItem(): CartItem
+	public function getFirstItem(): CartItem
 	{
-		return reset($this->cart);
+		//return reset($this->cart);
+		$item = reset($this->cart);
+		if(!$item){
+			throw new CartIsEmptyException();
+		}
+
+		return  $item;
 	}
 
 	public function count(): int

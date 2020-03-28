@@ -8,15 +8,25 @@ use App\ShoppingCart\CartItem;
 
 class CartTest extends TestCase
 {
+   
+    /**
+     * This method is called before each test.
+     */
+    protected function setUp()/* The :void return type declaration that should be here would cause a BC issue */
+    {
+        //echo "SetUp\n";
+        $this->cart = new Cart();
+    }
+
     public function testItCreatesACart()
     {
         //$item = new CartItem("Mouse", 20);
         $item = CreateItem("Mouse", 20);
-        $cart = new Cart();
+        //$cart = new Cart();
         
-        $this->assertEquals(0, $cart->count());
-        $cart->add($item);
-        $this->assertEquals(1,$cart->count());
+        $this->assertEquals(0, $this->cart->count());
+        $this->cart->add($item);
+        $this->assertEquals(1,$this->cart->count());
 
     }
 
@@ -52,6 +62,15 @@ class CartTest extends TestCase
         $cart = new Cart();
 
         $this->assertTrue($cart->isEmpty());
+    }
+
+    /**
+     * This method is called after each test.
+     */
+    protected function tearDown()/* The :void return type declaration that should be here would cause a BC issue */
+    {
+        //unset();
+        //echo "tearDown\n";
     }
 
 }

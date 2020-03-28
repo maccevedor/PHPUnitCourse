@@ -7,17 +7,16 @@ use Calculator;
 
 class FirstTest extends  TestCase
 {
-
     protected function setUp()
     {
         
-        if(true) {
-            $this->markTestSkipped(
-                'this'
-            );
+        // if(true) {
+        //     $this->markTestSkipped(
+        //         'this skipped'
+        //     );
 
-            $this->assertTrue(true);
-        }
+        //     $this->assertTrue(true);
+        // }
     }
     public function testSum(){
         $c = new Calculator();
@@ -36,6 +35,6 @@ class FirstTest extends  TestCase
 
     }
 
-    public function testSkipped(){
-    }
+    //public function testSkipped(){
+    //}
 }

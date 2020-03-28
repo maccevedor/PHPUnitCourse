@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit colors="true" verbose="true" bootatrap="vendor/autoload.php">
+<phpunit colors="true" verbose="true" bootstrap="vendor/autoload.php">
+<testsuites>
   <testsuite name="Test Suite">
     <directory >tests</directory>
     <!-- <directory suffix="*.php">tests</directory> -->
@@ -7,5 +8,5 @@
   <testsuite name="Unit">
     <directory suffix="*.php">./test/Unit</directory>
   </testsuite>
-
+</testsuites>
 </phpunit>

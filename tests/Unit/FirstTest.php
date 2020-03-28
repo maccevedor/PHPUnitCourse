@@ -18,6 +18,9 @@ class FirstTest extends  TestCase
         //     $this->assertTrue(true);
         // }
     }
+    /**
+     * @test
+     */
     public function testSum(){
         $c = new Calculator();
 
@@ -29,12 +32,18 @@ class FirstTest extends  TestCase
         $this->assertClassHasAttribute('data', Calculator::class);
         $this->assertContains(1, [2, 3, 1]);
     }
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testToComplete(){
         
-        $this->markTestIncomplete();
+       // $this->markTestIncomplete();
 
     }
-
-    //public function testSkipped(){
-    //}
+    /**
+     * @doesNotPerformAssertions
+     */
+    public function testSkipped(){
+    
+    }
 }

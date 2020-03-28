@@ -2,9 +2,11 @@
 
 namespace Test\Unit;
 
+use App\Connection;
 use PHPUnit\Framework\TestCase;
 use App\ShoppingCart\Cart;
 use App\ShoppingCart\CartItem;
+//use App\Connection;
 
 class CartTest extends TestCase
 {
@@ -16,6 +18,8 @@ class CartTest extends TestCase
     {
         //echo "SetUp\n";
         $this->cart = new Cart();
+        $this->conn = new Connection();
+        $this->conn->createSchema();
     }
 
     public function testItCreatesACart()
@@ -71,6 +75,15 @@ class CartTest extends TestCase
     {
         //unset();
         //echo "tearDown\n";
+        $this->conn->dropTable();
+    }
+
+
+    public function testItStoresAnCart(){
+
+        $this->conn->insert($this->cart);
+        $cart = $this->conn->get($this->cart->id);
+        $this->assertEquals($cart->id, $this->cart->id);
     }
 
 }

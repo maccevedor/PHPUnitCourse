@@ -23,16 +23,20 @@ class GameTest extends TestCase
 
     public function testIsRecommended_With5_ReturnsTrue()
     {
-        $game = $this->createMock(Game::class);
-        //$game = $this->getMockBuilder(Game::class)
-        //$game = $this->getMock('Game', ['getAverageScore']);
-        //$game->method('getAverageScore')
+        //$game = $this->createMock(Game::class);
+        $game = $this->getMockBuilder(Game::class);
+        //$game = $this->getMockBuilder(Game::class, ['getAverageScore']);
+        $game->setMethods(['getAverageScore'])
              //->willReturn(5);
                      
              
-        $game->method('isRecommended')
-             ->willReturn(5);
+        //$game->setMethods(['getAverageScore','isRecommended'])
+             ->getMock();
+
+        $game->setMethods(['getAverageScore'])->return(TRUE);
+
+        $games = new Game($game);
             
-        $this->assertTrue($game->getAverageScore());
+        $this->assertTrue($games->isRecommended());
     }
 }

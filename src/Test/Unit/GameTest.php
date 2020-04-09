@@ -69,8 +69,8 @@ class GameTest extends TestCase
         $game->method('getRatings')
              ->willReturn([$rating1,$rating2]);
         
+        //$this->assertEquals(null, $game->getAverageScore());
         $this->assertEquals(null, $game->getAverageScore());
-        //$this->assertEquals(7, $game->getAverageScore());
 
     }
 }

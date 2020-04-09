@@ -6,22 +6,44 @@ class Game
     protected $imagePath;
     protected $rating;
 
-    public function getAverageScore(){
+    // public function getAverageScore(){
+    //     $ratings = $this->getRatings();
+    //     $numRatings = count($ratings);
+
+    //     if($numRatings == 0){
+    //         return null;
+    //     }
+
+    //     $total = 0;
+    //     foreach ($ratings as $rating){
+    //         $total = $rating->getScore();
+    //     }
+    //     $valor = $total / $numRatings;
+    //     echo 'valor'.$valor;
+    //     return $total / $numRatings;
+    // }
+
+    public function getAverageScore()
+    {
         $ratings = $this->getRatings();
         $numRatings = count($ratings);
 
-        if($numRatings == 0){
+        if ($numRatings == 0) {
             return null;
         }
 
         $total = 0;
-        foreach ($ratings as $rating){
-            $total = $rating->getScore();
+        foreach ($ratings as $rating) {
+            $score = $rating->getScore();
+            if ($score === null) {
+                $numRatings--;
+                continue;
+            }
+            $total += $score;
         }
-        $valor = $total / $numRatings;
-        echo 'valor'.$valor;
         return $total / $numRatings;
     }
+
 
     public function isRecommended()
     {

@@ -45,9 +45,14 @@ class Game
     }
 
 
-    public function isRecommended()
+    // public function isRecommended()
+    // {
+    //     return $this->getAverageScore() >= 3;
+    // }
+    public function isRecommended($user)
     {
-        return $this->getAverageScore() >= 3;
+        $compatibility = $user->getGenreCompatibility($this->getGenreCode());
+        return $this->getAverageScore() / 10 * $compatibility >= 3;
     }
 
     public function getTitle()

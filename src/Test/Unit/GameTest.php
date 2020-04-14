@@ -73,4 +73,28 @@ class GameTest extends TestCase
         $this->assertEquals(null, $game->getAverageScore());
 
     }
+    public function testAverageScore_WithNullAnd5_Returns5(){
+
+        $rating1 = $this->getMockBuilder(Game::class)
+        ->setMethods(['getScore'])
+        ->getMock();
+
+        $rating1->method('getScore')
+        ->willReturn(null);
+        $rating2 = $this->getMockBuilder(Game::class)
+                ->setMethods(['getScore'])
+                ->getMock();
+        $rating2->method('getScore')
+        ->willReturn(5);
+
+        $game = $this->getMockBuilder(Game::class)
+            ->getMock();  
+
+            
+        $game->method('getRatings')
+        ->willReturn([$rating1,$rating2]);
+
+        //$this->assertEquals(null, $game->getAverageScore());
+        $this->assertEquals(5, $game->getAverageScore());
+    }
 }

@@ -20,6 +20,7 @@ class GameControllerTest extends PHPUnit_Framework_TestCase
             ],
         ]);
 
+
         $json = $response->getBody()->getContents();
         $this->assertJsonStringEqualsJsonString(
             file_get_contents(__DIR__.'/api-games-user.json'), $json);

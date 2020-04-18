@@ -16,5 +16,8 @@
         "psr-4": {
             "Test\\": "tests"
         }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
     }
 }

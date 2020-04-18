@@ -1,0 +1,58 @@
+{
+    "data": [
+        {
+            "title": "Game 2",
+            "imagePath": "/images/game.jpg",
+            "ratings": [
+                {
+                    "score": 4.5
+                }
+            ]
+        },
+        {
+            "title": "Game 2",
+            "imagePath": "/images/game.jpg",
+            "ratings": [
+                {
+                    "score": 4.5
+                }
+            ]
+        },
+        {
+            "title": "Game 3",
+            "imagePath": "/images/game.jpg",
+            "ratings": [
+                {
+                    "score": 4.5
+                }
+            ]
+        },
+        {
+            "title": "Game 4",
+            "imagePath": "/images/game.jpg",
+            "ratings": [
+                {
+                    "score": 4.5
+                }
+            ]
+        },
+        {
+            "title": "Game 5",
+            "imagePath": "/images/game.jpg",
+            "ratings": [
+                {
+                    "score": 4.5
+                }
+            ]
+        },
+        {
+            "title": "Game 6",
+            "imagePath": "/images/game.jpg",
+            "ratings": [
+                {
+                    "score": 4.5
+                }
+            ]
+        }
+    ]
+}

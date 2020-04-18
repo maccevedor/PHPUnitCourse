@@ -4,3 +4,5 @@ composer dump-autoload
  vendor/phpunit/phpunit/phpunit --testdox-html docs/index.html
 
   vendor/phpunit/phpunit/phpunit src/Test/Unit/GameTest.php --filter testImage_WithNull_ReturnsPlaceholder
+  
+  PHPUnit 4.8.3 class pluralsight

@@ -4,24 +4,7 @@ class Game
 {
     protected $title;
     protected $imagePath;
-    protected $rating;
-
-    // public function getAverageScore(){
-    //     $ratings = $this->getRatings();
-    //     $numRatings = count($ratings);
-
-    //     if($numRatings == 0){
-    //         return null;
-    //     }
-
-    //     $total = 0;
-    //     foreach ($ratings as $rating){
-    //         $total = $rating->getScore();
-    //     }
-    //     $valor = $total / $numRatings;
-    //     echo 'valor'.$valor;
-    //     return $total / $numRatings;
-    // }
+    protected $ratings;
 
     public function getAverageScore()
     {
@@ -44,11 +27,19 @@ class Game
         return $total / $numRatings;
     }
 
+    public function toArray()
+    {
+        $array = [
+            'title' => $this->getTitle(),
+            'imagePath' => $this->getImagePath(),
+            'ratings' => [],
+        ];
+        foreach ($this->getRatings() as $rating) {
+            $array['ratings'][] = $rating->toArray();
+        }
+        return $array;
+    }
 
-    // public function isRecommended()
-    // {
-    //     return $this->getAverageScore() >= 3;
-    // }
     public function isRecommended($user)
     {
         $compatibility = $user->getGenreCompatibility($this->getGenreCode());

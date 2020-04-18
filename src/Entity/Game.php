@@ -5,6 +5,17 @@ class Game
     protected $title;
     protected $imagePath;
     protected $ratings;
+    protected $id;
+
+    public function __construct($id = null)
+    {
+        $this->id = $id;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
 
     public function getAverageScore()
     {

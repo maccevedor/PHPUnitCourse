@@ -1,9 +1,13 @@
 <?php
-require __DIR__ . "/../../../vendor/autoload.php";
 use Goutte\Client;
 
 class GameControllerTest extends PHPUnit_Framework_TestCase
 {
+    public function setUp()
+    {
+        exec("mysql -u'root' --password='' < ".__DIR__."/../fixture.sql");
+    }
+
     public function testIndex_HasUl()
     {
         $client = new Client();

@@ -2,7 +2,12 @@
 
 require __DIR__ . "/../../Entity/User.php";
 
-class UserTest extends PHPUnit_Framework_TestCase
+
+use PHPUnit\Framework\TestCase;
+
+
+//class UserTest extends PHPUnit_Framework_TestCase
+class UserTest extends TestCase
 {
     public function testGenreCompatibility_With8And6_Returns7()
     {

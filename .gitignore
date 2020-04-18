@@ -48,3 +48,6 @@ tags
 .vim
 
 # End of https://www.gitignore.io/api/composer,visualstudiocode
+
+#phpStorm
+.idea
